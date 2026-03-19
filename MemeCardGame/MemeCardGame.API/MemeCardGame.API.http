@@ -1,0 +1,6 @@
+@MemeCardGame.API_HostAddress = http://localhost:5145
+
+GET {{MemeCardGame.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
