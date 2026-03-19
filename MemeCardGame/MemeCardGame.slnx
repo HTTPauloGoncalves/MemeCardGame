@@ -1,5 +1,6 @@
 <Solution>
   <Project Path="MemeCardGame.API/MemeCardGame.API.csproj" />
+  <Project Path="MemeCardGame.Application/MemeCardGame.Application.csproj" Id="e94102b6-d004-4f69-ab6a-8b7aca3c02bd" />
   <Project Path="MemeCardGame.Domain/MemeCardGame.Domain.csproj" />
   <Project Path="MemeCardGame.Infrastructure/MemeCardGame.Infrastructure.csproj" />
   <Project Path="MemeCardGame.Worker/MemeCardGame.Worker.csproj" />
