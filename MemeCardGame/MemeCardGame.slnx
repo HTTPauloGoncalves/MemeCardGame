@@ -1,3 +1,6 @@
 <Solution>
   <Project Path="MemeCardGame.API/MemeCardGame.API.csproj" />
+  <Project Path="MemeCardGame.Domain/MemeCardGame.Domain.csproj" />
+  <Project Path="MemeCardGame.Infrastructure/MemeCardGame.Infrastructure.csproj" />
+  <Project Path="MemeCardGame.Worker/MemeCardGame.Worker.csproj" />
 </Solution>
