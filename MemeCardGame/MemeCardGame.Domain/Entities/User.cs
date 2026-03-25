@@ -12,7 +12,10 @@ namespace MemeCardGame.Domain.Entities
         public string PasswordHash { get; private set; }
         public DateTime CreatedAt { get; private set; }
 
-        private User() { }
+
+        #pragma warning disable CS8618
+        private User() { } // Ef Core precisa de um construtor sem parâmetros para materializar a entidade, mas não queremos que ele seja usado diretamente.
+        #pragma warning restore CS8618
 
         public static User Create(string username, string email, string passwordHash)
         {

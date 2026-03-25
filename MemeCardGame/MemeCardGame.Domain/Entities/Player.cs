@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace MemeCardGame.Domain.Entities
@@ -7,14 +8,18 @@ namespace MemeCardGame.Domain.Entities
     public class Player
     {
         public Guid UserId { get; private set; }
-        public int Hp { get; private set; }
-        public int Mana { get; private set; }
-        public int MaxMana { get; private set; }
-        public List<Card> Deck { get; private set; }
-        public List<Card> Hand { get; private set; }
-        public List<Card> Field { get; private set; }
 
-        private Player() { }
+        [Range(0, 60, ErrorMessage = "O valor de HP tem que estar entre 0 a 60")]
+        public int Hp { get; private set; }
+
+        [Range(0, 40, ErrorMessage = "O valor de Mana tem que estar entre 0 a 40")]
+        public int Followers { get; private set; }
+
+        [Range(0, 40, ErrorMessage = "O valor de Mana tem que estar entre 0 a 40")]
+        public int MaxFollowers { get; private set; }
+        public List<Card> Deck { get; private set; } = new List<Card>();
+        public List<Card> Hand { get; private set; } = new List<Card>();
+        public List<Card> Field { get; private set; } = new List<Card>();
 
         public static Player Create(Guid userId, List<Card> deck)
         {
@@ -22,8 +27,8 @@ namespace MemeCardGame.Domain.Entities
             {
                 UserId = userId,
                 Hp = 20,
-                Mana = 3,
-                MaxMana = 3,
+                Followers = 3,
+                MaxFollowers = 40,
                 Deck = Shuffle(deck),
                 Hand = new List<Card>(),
                 Field = new List<Card>()
